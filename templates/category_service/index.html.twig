@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CategoryService index{% endblock %}
+{% block title %}Catégorie de Service{% endblock %}
 
 {% block body %}
-    <h1>CategoryService index</h1>
+    <h1>Catégorie de Service</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -31,5 +30,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category_service_new') }}">Create new</a>
+    <a href="{{ path('category_service_new') }}">Nouvelle Catégory</a>
 {% endblock %}
