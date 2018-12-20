@@ -7,12 +7,12 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Date de l'évènement</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Nom</th>
+            <th>Date de l'évènement</th>
+            <th>Description</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for event in events %}
@@ -21,8 +21,10 @@
                 <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.description }}</td>
                 <td>
-                    <a href="{{ path('event_show', {'id': event.id}) }}">voir</a>
-                    <a href="{{ path('event_edit', {'id': event.id}) }}">modifier</a>
+                    <a class="btn btn-primary" href="{{ path('category_company_show', {'id': category_company.id}) }}"
+                       role="button">voir</a>
+                    <a class="btn btn-primary" href="{{ path('category_company_edit', {'id': category_company.id}) }}"
+                       role="button">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('event_new') }}">Créer</a>
+    <a class="btn btn-primary" href="{{ path('event_new') }}" role="button">Créer</a>
 {% endblock %}

@@ -25,8 +25,8 @@
                 <td>{{ company.mail }}</td>
                 <td>{{ company.comment }}</td>
                 <td>
-                    <a href="{{ path('company_show', {'id': company.id}) }}">voir</a>
-                    <a href="{{ path('company_edit', {'id': company.id}) }}">modifier</a>
+                    <a class="btn btn-primary" href="{{ path('company_show', {'id': company.id}) }}" role="button">voir</a>
+                    <a class="btn btn-primary" href="{{ path('company_edit', {'id': company.id}) }}" role="button">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('company_new') }}">Créer</a>
+    <a class="btn btn-primary" href="{{ path('company_new') }}" role="button">Créer</a>
 {% endblock %}

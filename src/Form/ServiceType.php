@@ -18,7 +18,9 @@ class ServiceType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre',
             ])
-            ->add('description')
+            ->add('description', TextType::class, [
+                'label' => 'Description',
+            ])
             ->add('categoryService', EntityType::class, [
                 'class' => CategoryService::class,
                 'choice_label' => 'name',
