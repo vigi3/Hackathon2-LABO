@@ -8,14 +8,20 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Nom</th>
-                <th>actions</th>
+                <th>Nom de catégorie</th>
+                <th>Service</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for category_service in category_services %}
             <tr>
                 <td>{{ category_service.name }}</td>
+                <td>{% for service in category_service.services %}
+                    {{ service.title }}
+                    {% endfor %}
+
+                </td>
                 <td>
                     <a class="btn btn-primary" href="{{ path('category_service_show', {'id': category_service.id}) }}" role="button">voir</a>
                     <a class="btn btn-primary" href="{{ path('category_service_edit', {'id': category_service.id}) }}" role="button">modifier</a>
