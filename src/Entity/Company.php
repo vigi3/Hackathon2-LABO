@@ -29,11 +29,6 @@ class Company
     private $managerName;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $companyType;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mail;
@@ -52,6 +47,11 @@ class Company
      * @ORM\ManyToMany(targetEntity="App\Entity\Service", mappedBy="companies")
      */
     private $services;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CategoryCompany", inversedBy="companies")
+     */
+    private $categoryCompany;
 
     public function __construct()
     {
@@ -84,18 +84,6 @@ class Company
     public function setManagerName(string $managerName): self
     {
         $this->managerName = $managerName;
-
-        return $this;
-    }
-
-    public function getCompanyType(): ?string
-    {
-        return $this->companyType;
-    }
-
-    public function setCompanyType(string $companyType): self
-    {
-        $this->companyType = $companyType;
 
         return $this;
     }
@@ -176,6 +164,18 @@ class Company
             $this->services->removeElement($service);
             $service->removeCompany($this);
         }
+
+        return $this;
+    }
+
+    public function getCategoryCompany(): ?CategoryCompany
+    {
+        return $this->categoryCompany;
+    }
+
+    public function setCategoryCompany(?CategoryCompany $categoryCompany): self
+    {
+        $this->categoryCompany = $categoryCompany;
 
         return $this;
     }

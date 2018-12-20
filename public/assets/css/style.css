@@ -1,0 +1,49 @@
+.banner {
+    position: relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+body {
+    background-color: #eaeaea;
+}
+
+div:target {
+    padding-top: 10em;
+    margin-top: -10em;
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.sticky + .content {
+    padding-top: 60px;
+}
+
+.icone {
+    width: 50%;
+    height: 50%;
+}
