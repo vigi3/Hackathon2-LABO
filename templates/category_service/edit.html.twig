@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Catégorie de Service{% endblock %}
+{% block title %}Modifier la catégorie{% endblock %}
 
 {% block body %}
-    <h1>Catégorie de Service</h1>
+    <h1>Modifier la catégorie</h1>
 
-    {{ include('category_service/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('category_service/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     <a href="{{ path('category_service_index') }}">Retour à la liste</a>
 

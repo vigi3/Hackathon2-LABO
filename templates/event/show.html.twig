@@ -8,15 +8,11 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>NameEvent</th>
+                <th>Nom</th>
                 <td>{{ event.nameEvent }}</td>
             </tr>
             <tr>
-                <th>DateEvent</th>
+                <th>Date de l'évènement</th>
                 <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
@@ -26,9 +22,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('event_index') }}">back to list</a>
+    <a href="{{ path('event_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+    <a href="{{ path('event_edit', {'id': event.id}) }}">modifier</a>
 
     {{ include('event/_delete_form.html.twig') }}
 {% endblock %}

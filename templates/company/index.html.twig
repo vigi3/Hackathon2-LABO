@@ -8,10 +8,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>CompanyName</th>
                 <th>ManagerName</th>
-                <th>CompanyType</th>
+                <th>Company</th>
                 <th>Mail</th>
                 <th>Comment</th>
                 <th>actions</th>
@@ -20,15 +19,14 @@
         <tbody>
         {% for company in companies %}
             <tr>
-                <td>{{ company.id }}</td>
                 <td>{{ company.companyName }}</td>
                 <td>{{ company.managerName }}</td>
-                <td>{{ company.companyType }}</td>
+                <td>{{ company.categoryCompany.name }}</td>
                 <td>{{ company.mail }}</td>
                 <td>{{ company.comment }}</td>
                 <td>
-                    <a href="{{ path('company_show', {'id': company.id}) }}">show</a>
-                    <a href="{{ path('company_edit', {'id': company.id}) }}">edit</a>
+                    <a href="{{ path('company_show', {'id': company.id}) }}">voir</a>
+                    <a href="{{ path('company_edit', {'id': company.id}) }}">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('company_new') }}">Create new</a>
+    <a href="{{ path('company_new') }}">Créer</a>
 {% endblock %}
