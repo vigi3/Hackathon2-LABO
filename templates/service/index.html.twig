@@ -1,15 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Service index{% endblock %}
-
+{% block title %}Services{% endblock %}
 {% block body %}
-    <h1>Service index</h1>
-
+    <h1>Services </h1>
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
+            <tr><th>Titre</th>
                 <th>Description</th>
                 <th>actions</th>
             </tr>
@@ -17,12 +13,11 @@
         <tbody>
         {% for service in services %}
             <tr>
-                <td>{{ service.id }}</td>
                 <td>{{ service.title }}</td>
                 <td>{{ service.description }}</td>
                 <td>
-                    <a href="{{ path('service_show', {'id': service.id}) }}">show</a>
-                    <a href="{{ path('service_edit', {'id': service.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('service_show', {'id': service.id}) }}" role="button">voir</a>
+                    <a class="btn btn-primary" href="{{ path('service_edit', {'id': service.id}) }}" role="button">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +28,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('service_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('service_new') }}" role="button">Créer</a>
 {% endblock %}
