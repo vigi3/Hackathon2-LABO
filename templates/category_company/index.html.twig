@@ -1,26 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CategoryCompany index{% endblock %}
+{% block title %}Catégories d'entreprise{% endblock %}
 
 {% block body %}
-    <h1>CategoryCompany index</h1>
+    <h1>Catégories d'entreprise</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for category_company in category_companies %}
             <tr>
-                <td>{{ category_company.id }}</td>
                 <td>{{ category_company.name }}</td>
                 <td>
-                    <a href="{{ path('category_company_show', {'id': category_company.id}) }}">show</a>
-                    <a href="{{ path('category_company_edit', {'id': category_company.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('category_company_show', {'id': category_company.id}) }}" role="button">voir</a>
+                    <a class="btn btn-primary" href="{{ path('category_company_edit', {'id': category_company.id}) }}" role="button">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +29,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category_company_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('category_company_new') }}" role="button">Créer</a>
 {% endblock %}
