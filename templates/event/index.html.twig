@@ -21,9 +21,9 @@
                 <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.description }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ path('category_company_show', {'id': category_company.id}) }}"
+                    <a class="btn btn-primary" href="{{ path('event_show', {'id': event.id}) }}"
                        role="button">voir</a>
-                    <a class="btn btn-primary" href="{{ path('category_company_edit', {'id': category_company.id}) }}"
+                    <a class="btn btn-primary" href="{{ path('event_edit', {'id': event.id}) }}"
                        role="button">modifier</a>
                 </td>
             </tr>
