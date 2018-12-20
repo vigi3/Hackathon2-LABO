@@ -53,6 +53,11 @@ class Company
      */
     private $services;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CategoryCompany", inversedBy="companies")
+     */
+    private $categoryCompany;
+
     public function __construct()
     {
         $this->events = new ArrayCollection();
@@ -176,6 +181,18 @@ class Company
             $this->services->removeElement($service);
             $service->removeCompany($this);
         }
+
+        return $this;
+    }
+
+    public function getCategoryCompany(): ?CategoryCompany
+    {
+        return $this->categoryCompany;
+    }
+
+    public function setCategoryCompany(?CategoryCompany $categoryCompany): self
+    {
+        $this->categoryCompany = $categoryCompany;
 
         return $this;
     }
