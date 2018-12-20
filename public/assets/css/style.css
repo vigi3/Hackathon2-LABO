@@ -9,6 +9,11 @@ body {
     background-color: #eaeaea;
 }
 
+div:target {
+    padding-top: 10em;
+    margin-top: -10em;
+}
+
 #navbar {
     overflow: hidden;
     background-color: #333;
