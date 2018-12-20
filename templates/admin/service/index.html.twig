@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services{% endblock %}
+
+{% block header %}{% include 'navbarAdmin.html.twig' %}{% endblock %}
+
+{% block body %}
+    <div class="container_fluid">
+        <h1>Services </h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for service in services %}
+                        <tr>
+                            <td>{{ service.title }}</td>
+                            <td>{{ service.description }}</td>
+                            <td>
+                                <a class="btn btn-primary" href="{{ path('service_admin_show', {'id': service.id}) }}"
+                                   role="button">voir</a>
+                                <a class="btn btn-primary" href="{{ path('service_admin_edit', {'id': service.id}) }}"
+                                   role="button">modifier</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-center"><a class="btn btn-primary" href="{{ path('service_admin_new') }}" role="button">Créer</a></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

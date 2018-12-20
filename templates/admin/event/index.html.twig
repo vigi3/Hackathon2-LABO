@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evènements{% endblock %}
+
+{% block header %}{% include 'navbarAdmin.html.twig' %}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Evènements</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Date de l'évènement</th>
+                        <th>Description</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for event in events %}
+                        <tr>
+                            <td>{{ event.nameEvent }}</td>
+                            <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
+                            <td>{{ event.description }}</td>
+                            <td>
+                                <a class="btn btn-primary" href="{{ path('event_admin_show', {'id': event.id}) }}"
+                                   role="button">voir</a>
+                                <a class="btn btn-primary" href="{{ path('event_admin_edit', {'id': event.id}) }}"
+                                   role="button">modifier</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-center"><a class="btn btn-primary" href="{{ path('event_admin_new') }}" role="button">Créer</a></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories d'entreprise{% endblock %}
+
+{% block header %}{% include 'navbarAdmin.html.twig' %}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Catégories d'entreprise</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for category_company in category_companies %}
+                        <tr>
+                            <td>{{ category_company.name }}</td>
+                            <td>
+                                <a class="btn btn-primary"
+                                   href="{{ path('category_company_admin_show', {'id': category_company.id}) }}"
+                                   role="button">voir</a>
+                                <a class="btn btn-primary"
+                                   href="{{ path('category_company_admin_edit', {'id': category_company.id}) }}"
+                                   role="button">modifier</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-center"><a class="btn btn-primary" href="{{ path('category_company_admin_new') }}" role="button">Créer</a></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

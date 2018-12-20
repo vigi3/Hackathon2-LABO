@@ -48,3 +48,15 @@ div:target {
     width: 50%;
     height: 50%;
 }
+.adm
+{
+    font-size: 2vh;
+}
+h1
+{
+    text-align: center;
+}
+.adminav
+{
+    position: relative;
+}
