@@ -13,7 +13,8 @@
                 <th>Company</th>
                 <th>Mail</th>
                 <th>Comment</th>
-                <th>actions</th>
+                <th>A participer à l'événement</th>
+                <th>A participer au service</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +26,66 @@
                 <td>{{ company.mail }}</td>
                 <td>{{ company.comment }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ path('company_show', {'id': company.id}) }}" role="button">voir</a>
-                    <a class="btn btn-primary" href="{{ path('company_edit', {'id': company.id}) }}" role="button">modifier</a>
+                    {%  if  company.events  | length > 1 %}
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-{{ company.id }}">
+                        La liste des événements
+                    </button>
+                    <div id="event-{{ company.id }}" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">{{ company.companyName }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {% for event in company.events %}
+                                    <p>{{ event.nameEvent }}</p>
+                                    {% endfor %}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    {% for event in company.events %}
+                     <a>{{ event.nameEvent }}</a>
+                    {% endfor %}
+                    {% endif %}
+                </td>
+                <td>
+                    {%  if  company.services  | length > 1 %}
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#service-{{ company.id }}">
+                            La liste des services
+                        </button>
+                        <div id="service-{{ company.id }}" class="modal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">{{ company.companyName }}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {% for service in company.services %}
+                                            <p>{{ service.title }}</p>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        {% for service in company.services %}
+                            <a>{{ service.title }}</a>
+                        {% endfor %}
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -36,6 +95,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a class="btn btn-primary" href="{{ path('company_new') }}" role="button">Créer</a>
 {% endblock %}
