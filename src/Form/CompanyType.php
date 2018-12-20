@@ -16,7 +16,7 @@ class CompanyType extends AbstractType
         $builder
             ->add('companyName')
             ->add('managerName')
-            ->add('companyType', EntityType::class, [
+            ->add('categoryCompany', EntityType::class, [
                 'class' => CategoryCompany::class,
                 'choice_label' => 'name',
                 'label' => 'Catégorie',

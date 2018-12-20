@@ -29,11 +29,6 @@ class Company
     private $managerName;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $companyType;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mail;
@@ -89,18 +84,6 @@ class Company
     public function setManagerName(string $managerName): self
     {
         $this->managerName = $managerName;
-
-        return $this;
-    }
-
-    public function getCompanyType(): ?string
-    {
-        return $this->companyType;
-    }
-
-    public function setCompanyType(string $companyType): self
-    {
-        $this->companyType = $companyType;
 
         return $this;
     }
