@@ -1,35 +1,24 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}CategoryService index{% endblock %}
-
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
 {% block body %}
-    <h1>CategoryService index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category_service in category_services %}
-            <tr>
-                <td>{{ category_service.id }}</td>
-                <td>{{ category_service.name }}</td>
-                <td>
-                    <a href="{{ path('category_service_show', {'id': category_service.id}) }}">show</a>
-                    <a href="{{ path('category_service_edit', {'id': category_service.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('category_service_new') }}">Create new</a>
+    <div class="container mt-5">
+        <div class="row">
+            {% for category_service in category_services %}
+                <div class="icone col-5 mt-5 mb-5">
+                    <img src="{{ category_service.image }}" alt=""/>
+                </div>
+                <div class="col-3 mt-auto mb-auto">
+                    <ul class=" d-block">
+                        {% for service in category_service.services %}
+                            <li>
+                            {{ service.title }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
