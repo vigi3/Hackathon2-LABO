@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/category/company")
+ * @Route("/admin/category/company")
  */
 class CategoryCompanyAdminController extends AbstractController
 {
     /**
-     * @Route("/admin", name="category_company_admin_index", methods={"GET"})
+     * @Route("/", name="category_company_admin_index", methods={"GET"})
      */
     public function index(CategoryCompanyRepository $categoryCompanyRepository): Response
     {

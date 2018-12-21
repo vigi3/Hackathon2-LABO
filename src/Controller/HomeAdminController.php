@@ -11,10 +11,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class HomeAdminController
+ * @package App\Controller
+ * @route("/admin", name="home_admin")
+ */
 class HomeAdminController extends AbstractController
 {
     /**
-     * @Route("/admin", name="home_admin")
+     * @Route("/", name="home_admin_index")
      */
     public function index()
     {

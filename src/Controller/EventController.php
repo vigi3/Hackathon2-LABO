@@ -43,7 +43,7 @@ class EventController extends AbstractController
         ]);
     }
     /**
-     * @Route("/{id}", name="event_show", methods={"GET"})
+     * @Route("/show/{id}", name="event_show", methods={"GET"})
      * @param Event $event
      * @param CategoryCompany $categoryCompany
      * @param Company $company

@@ -13,12 +13,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/event")
+ * @Route("/admin/event")
  */
 class EventAdminController extends AbstractController
 {
     /**
-     * @Route("/admin", name="event_admin_index", methods={"GET"})
+     * @Route("/", name="event_admin_index", methods={"GET"})
      */
     public function index(EventRepository $eventRepository): Response
     {
