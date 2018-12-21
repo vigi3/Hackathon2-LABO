@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\CategoryCompany;
+use App\Entity\Company;
 use App\Entity\Event;
 use App\Form\EventType;
+use App\Repository\CategoryCompanyRepository;
+use App\Repository\CompanyRepository;
 use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,10 +52,18 @@ class EventController extends AbstractController
 
     /**
      * @Route("/{id}", name="event_show", methods={"GET"})
+     * @param Event $event
+     * @param CategoryCompany $categoryCompany
+     * @param Company $company
+     * @return Response
      */
-    public function show(Event $event): Response
+    public function show(Event $event, CategoryCompanyRepository $categoryCompanyRepository, CompanyRepository $companyRepository): Response
     {
-        return $this->render('event/show.html.twig', ['event' => $event]);
+        return $this->render('event/show.html.twig', [
+            'categoryCompanies' => $categoryCompanyRepository->findAll(),
+            'companies' => $companyRepository->findAll(),
+            'event' => $event
+        ]);
     }
 
     /**
