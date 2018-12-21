@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-
+{% block title %}Questionnaire de satisfaction{% endblock %}
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
 {% block body %}
     <div class="container">
         <h1 class="text-center mt-5 mb-5">Questionnaire de satisfaction</h1>
@@ -94,7 +96,7 @@
             </div>
         </div>
         <div class="text-center mt-5">
-            <button class="btn">{{ button_label|default('Save') }}</button>
+            <a class="btn btn-danger" href="" role="button">Valider</a>
         </div>
     </div>
 {% endblock %}
