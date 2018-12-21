@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Company index{% endblock %}
+
+{% block body %}
+    <h1>Company index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CompanyName</th>
+                <th>ManagerName</th>
+                <th>Company</th>
+                <th>Mail</th>
+                <th>Comment</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for company in companies %}
+            <tr>
+                <td>{{ company.companyName }}</td>
+                <td>{{ company.managerName }}</td>
+                <td>{{ company.categoryCompany.name }}</td>
+                <td>{{ company.mail }}</td>
+                <td>{{ company.comment }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('company_show', {'id': company.id}) }}" role="button">voir</a>
+                    <a class="btn btn-primary" href="{{ path('company_edit', {'id': company.id}) }}" role="button">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('company_new') }}" role="button">Créer</a>
+{% endblock %}

@@ -23,9 +23,9 @@
                     </tr>
                     </tbody>
                 </table>
-                <a class="btn btn-primary" href="{{ path('event_admin_edit', {'id': event.id}) }}" role="button">modifier</a>
+                <a class="btn btn-danger" href="{{ path('event_admin_edit', {'id': event.id}) }}" role="button">modifier</a>
                 {{ include('admin/event/_delete_form.html.twig') }}
-                <a class="btn btn-primary" href="{{ path('event_admin_index') }}" role="button">Retour à la liste</a>
+                <a class="btn btn-danger" href="{{ path('event_admin_index') }}" role="button">Retour à la liste</a>
             </div>
         </div>
     </div>

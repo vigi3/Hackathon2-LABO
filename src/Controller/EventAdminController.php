@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\CategoryCompany;
+use App\Entity\Company;
 use App\Entity\Event;
 use App\Form\EventType;
 use App\Repository\EventRepository;
@@ -48,6 +50,10 @@ class EventAdminController extends AbstractController
 
     /**
      * @Route("/{id}", name="event_admin_show", methods={"GET"})
+     * @param Event $event
+     * @param CategoryCompany $categoryCompany
+     * @param Company $company
+     * @return Response
      */
     public function show(Event $event): Response
     {

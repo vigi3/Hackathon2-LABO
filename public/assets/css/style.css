@@ -1,11 +1,17 @@
 body {
     background-color: #eaeaea;
+    margin-top: 100px;
 }
+
+.container {
+    background-color: #eaeaea;
+}
+
 .banner {
     position: relative;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 40%;
     height: 40%;
 }
@@ -16,47 +22,35 @@ div:target {
 }
 
 #navbar {
-    overflow: hidden;
-    background-color: #333;
-}
-
-#navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-}
-
-.content {
-    padding: 16px;
-}
-
-.sticky {
+    z-index: 100;
+    width: 100%;
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 100;
 }
 
-.sticky + .content {
-    padding-top: 60px;
+.nav-item {
+    font-size: 30px;
+    margin-right: 10%;
+}
+
+a {
+    text-align: center;
+    color: #ee413a;
+}
+
+a:hover {
+    color: black;
 }
 
 .icone {
     width: 50%;
     height: 50%;
 }
-.adm
-{
-    font-size: 2vh;
+
+.adm {
+    font-size: 2.5vh;
 }
-h1
-{
+
+h1 {
     text-align: center;
-}
-.adminav
-{
-    position: relative;
 }

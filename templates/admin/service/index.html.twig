@@ -23,9 +23,9 @@
                             <td>{{ service.title }}</td>
                             <td>{{ service.description }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{ path('service_admin_show', {'id': service.id}) }}"
+                                <a class="btn btn-danger" href="{{ path('service_admin_show', {'id': service.id}) }}"
                                    role="button">voir</a>
-                                <a class="btn btn-primary" href="{{ path('service_admin_edit', {'id': service.id}) }}"
+                                <a class="btn btn-danger" href="{{ path('service_admin_edit', {'id': service.id}) }}"
                                    role="button">modifier</a>
                             </td>
                         </tr>
@@ -36,7 +36,7 @@
                     {% endfor %}
                     </tbody>
                 </table>
-                <div class="text-center"><a class="btn btn-primary" href="{{ path('service_admin_new') }}" role="button">Créer</a></div>
+                <div class="text-center"><a class="btn btn-danger" href="{{ path('service_admin_new') }}" role="button">Créer</a></div>
             </div>
         </div>
     </div>

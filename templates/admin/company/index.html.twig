@@ -29,9 +29,9 @@
                             <td>{{ company.mail }}</td>
                             <td>{{ company.comment }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{ path('company_admin_show', {'id': company.id}) }}"
+                                <a class="btn btn-danger" href="{{ path('company_admin_show', {'id': company.id}) }}"
                                    role="button">voir</a>
-                                <a class="btn btn-primary" href="{{ path('company_admin_edit', {'id': company.id}) }}"
+                                <a class="btn btn-danger" href="{{ path('company_admin_edit', {'id': company.id}) }}"
                                    role="button">modifier</a>
                             </td>
                         </tr>
@@ -42,7 +42,7 @@
                     {% endfor %}
                     </tbody>
                 </table>
-                <div class="text-center"><a class="btn btn-primary" href="{{ path('company_admin_new') }}" role="button">Créer</a></div>
+                <div class="text-center"><a class="btn btn-danger" href="{{ path('company_admin_new') }}" role="button">Créer</a></div>
             </div>
         </div>
     </div>

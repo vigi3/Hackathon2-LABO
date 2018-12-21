@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+    <div class="justify-content-start">
+        <a class="btn btn-primary" href="{{ path('event_index') }}" role="button">Retour à la liste</a>
+    </div>
+    <div class="container justify-content-center">
+        <h1 class="text-center mt-5 mb-5">{{ event.nameEvent }}</h1>
+
+        <table class="table">
+            <tbody>
+            <tr class="row">
+                <th>Date de l'évènement:</th>
+                <td>{{ event.dateEvent ? event.dateEvent|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr class="row">
+                <th>Description:</th>
+                <td>{{ event.description }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="container mt-5">
+            <h2>Les participants</h2>
+            <div class="row">
+                {% for categoryCompany in categoryCompanies %}
+                    <div class="icone col-5 mt-5 mb-5">
+                        <img src="{{ categoryCompany.image }}" alt=""/>
+                    </div>
+                <div class="col-3 mt-auto mb-auto">
+                    <ul class=" d-block">
+                    {% for company in event.companies if categoryCompany==company.categoryCompany %}
+                        <li>
+                            {{ company.companyName }}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

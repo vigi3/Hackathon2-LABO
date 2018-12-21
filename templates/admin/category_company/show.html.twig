@@ -15,10 +15,10 @@
                     </tr>
                     </tbody>
                 </table>
-                <a class="btn btn-primary" href="{{ path('category_company_admin_edit', {'id': category_company.id}) }}"
+                <a class="btn btn-danger" href="{{ path('category_company_admin_edit', {'id': category_company.id}) }}"
                    role="button">modifier</a>
                 {{ include('admin/category_company/_delete_form.html.twig') }}
-                <a class="btn btn-primary" href="{{ path('category_company_admin_index') }}" role="button">Retour à la liste</a>
+                <a class="btn btn-danger" href="{{ path('category_company_admin_index') }}" role="button">Retour à la liste</a>
             </div>
         </div>
     </div>
