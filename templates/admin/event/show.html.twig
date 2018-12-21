@@ -3,28 +3,30 @@
 {% block title %}Event{% endblock %}
 
 {% block body %}
-    <h1>Event</h1>
-
-    <table class="table">
-        <tbody>
-        <tr>
-            <th>Nom</th>
-            <td>{{ event.nameEvent }}</td>
-        </tr>
-        <tr>
-            <th>Date de l'évènement</th>
-            <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
-        </tr>
-        <tr>
-            <th>Description</th>
-            <td>{{ event.description }}</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <a class="btn btn-primary" href="{{ path('event_admin_edit', {'id': event.id}) }}" role="button">modifier</a>
-
-    {{ include('admin/event/_delete_form.html.twig') }}
-
-    <a class="btn btn-primary" href="{{ path('event_admin_index') }}" role="button">Retour à la liste</a>
+    <div class="container">
+        <h1>Event</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ event.nameEvent }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date de l'évènement</th>
+                        <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ event.description }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a class="btn btn-primary" href="{{ path('event_admin_edit', {'id': event.id}) }}" role="button">modifier</a>
+                {{ include('admin/event/_delete_form.html.twig') }}
+                <a class="btn btn-primary" href="{{ path('event_admin_index') }}" role="button">Retour à la liste</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -3,11 +3,14 @@
 {% block title %}Modifier Company{% endblock %}
 
 {% block body %}
-    <h1>Modifier Company</h1>
-
-    {{ include('admin/company/_form.html.twig', {'button_label': 'Changer'}) }}
-
-    <a class="btn btn-primary" href="{{ path('company_admin_index') }}" role="button">Retour à la liste</a>
-
-    {{ include('admin/company/_delete_form.html.twig') }}
+    <div class="container">
+        <h1>Modifier Company</h1>
+        <div class="row">
+            <div class="col-12">
+                {{ include('admin/company/_form.html.twig', {'button_label': 'Changer'}) }}
+                {{ include('admin/company/_delete_form.html.twig') }}
+                <a class="btn btn-primary" href="{{ path('company_admin_index') }}" role="button">Retour à la liste</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

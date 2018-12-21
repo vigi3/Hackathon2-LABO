@@ -3,10 +3,13 @@
 {% block title %}Nouvelle catégorie{% endblock %}
 
 {% block body %}
-    <h1>Créer une nouvelle catégorie</h1>
-
-    {{ include('admin/category_company/_form.html.twig') }}
-
-    <a class="btn btn-primary" href="{{ path('category_company_admin_index') }}" role="button">Retour à la liste</a>
-
+    <div class="container">
+        <h1>Créer une nouvelle catégorie</h1>
+        <div class="row">
+            <div class="col-12">
+                {{ include('admin/category_company/_form.html.twig') }}
+                <a class="btn btn-primary" href="{{ path('category_company_admin_index') }}" role="button">Retour à la liste</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

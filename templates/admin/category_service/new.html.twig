@@ -3,9 +3,13 @@
 {% block title %}Nouvelle Catégorie de Service{% endblock %}
 
 {% block body %}
-    <h1>Nouvelle Catégorie de Service</h1>
-
-    {{ include('admin/category_service/_form.html.twig') }}
-
-    <a class="btn btn-primary" href="{{ path('category_service_admin_index') }}" role="button">Retour à la liste</a>
+    <div class="container">
+        <h1>Nouvelle Catégorie de Service</h1>
+        <div class="row">
+            <div class="col-12">
+                {{ include('admin/category_service/_form.html.twig') }}
+                <a class="btn btn-primary" href="{{ path('category_service_admin_index') }}" role="button">Retour à la liste</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
