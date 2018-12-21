@@ -20,7 +20,6 @@
                 <td>{% for service in category_service.services %}
                     {{ service.title }}
                     {% endfor %}
-
                 </td>
                 <td>
                     <a class="btn btn-primary" href="{{ path('category_service_show', {'id': category_service.id}) }}" role="button">voir</a>

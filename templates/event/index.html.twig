@@ -3,37 +3,24 @@
 {% block title %}Evènements{% endblock %}
 
 {% block body %}
-    <h1>Evènements</h1>
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Date de l'évènement</th>
-            <th>Description</th>
-            <th>actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                <td>{{ event.nameEvent }}</td>
-                <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.description }}</td>
-                <td>
+    <div class="container-fluid">
+        <h1 class="text-center" xmlns="http://www.w3.org/1999/html">Evènements</h1>
+        <div class="justify-content-center row">
+            {% for event in events %}
+                <div class="col-4 offset-1 card border-dark mt-5 mb-3" style="max-width: 20rem;">
+                    <div class="card-header"><h2 class="text-center">{{ event.nameEvent }}</h2></div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ event.dateEvent ? event.dateEvent|date('d-m-Y') : '' }}</h4>
+                        <p class="card-text">{{ event.description }}</p>
+                    </div>
                     <a class="btn btn-primary" href="{{ path('event_show', {'id': event.id}) }}"
                        role="button">voir</a>
-                    <a class="btn btn-primary" href="{{ path('event_edit', {'id': event.id}) }}"
-                       role="button">modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a class="btn btn-primary" href="{{ path('event_new') }}" role="button">Créer</a>
+                </div>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
