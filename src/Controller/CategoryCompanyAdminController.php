@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryCompanyAdminController extends AbstractController
 {
     /**
-     * @Route("/", name="category_company_admin_index", methods={"GET"})
+     * @Route("/admin", name="category_company_admin_index", methods={"GET"})
      */
     public function index(CategoryCompanyRepository $categoryCompanyRepository): Response
     {

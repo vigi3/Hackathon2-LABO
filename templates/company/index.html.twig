@@ -5,7 +5,7 @@
     {% include 'navbar.html.twig' %}
 {% endblock %}
 {% block body %}
-    <h1>Company index</h1>
+    <h1>Entreprises</h1>
 
     <table class="table">
         <thead>
@@ -29,7 +29,7 @@
                 <td>{{ company.comment }}</td>
                 <td>
                     {%  if  company.events  | length > 1 %}
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-{{ company.id }}">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#event-{{ company.id }}">
                         La liste des événements
                     </button>
                     <div id="event-{{ company.id }}" class="modal" tabindex="-1" role="dialog">
@@ -47,7 +47,7 @@
                                     {% endfor %}
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                 </td>
                 <td>
                     {%  if  company.services  | length > 1 %}
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#service-{{ company.id }}">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#service-{{ company.id }}">
                             La liste des services
                         </button>
                         <div id="service-{{ company.id }}" class="modal" tabindex="-1" role="dialog">
@@ -78,14 +78,14 @@
                                         {% endfor %}
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     {% else %}
                         {% for service in company.services %}
-                            <a>{{ service.title }}</a>
+                            <a class="btn btn-danger" role="button">{{ service.title }}</a>
                         {% endfor %}
                     {% endif %}
                 </td>

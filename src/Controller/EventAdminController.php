@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class EventAdminController extends AbstractController
 {
     /**
-     * @Route("/", name="event_admin_index", methods={"GET"})
+     * @Route("/admin", name="event_admin_index", methods={"GET"})
      */
     public function index(EventRepository $eventRepository): Response
     {
