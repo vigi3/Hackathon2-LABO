@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier évènement{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Modifier évènement</h1>
+        <div class="row">
+            <div class="col-12">
+                {{ include('admin/event/_form.html.twig', {'button_label': 'Changer'}) }}
+                {{ include('admin/event/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-danger" href="{{ path('event_admin_index') }}" role="button">Retour à la liste</a>
+{% endblock %}
