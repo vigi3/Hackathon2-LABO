@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprises{% endblock %}
+
+{% block header %}{% include 'navbarAdmin.html.twig' %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Entreprises</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Responsable</th>
+                        <th>Catégorie</th>
+                        <th>Email</th>
+                        <th>Commentaires</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for company in companies %}
+                        <tr>
+                            <td>{{ company.companyName }}</td>
+                            <td>{{ company.managerName }}</td>
+                            <td>{{ company.categoryCompany.name }}</td>
+                            <td>{{ company.mail }}</td>
+                            <td>{{ company.comment }}</td>
+                            <td>
+                                <a class="btn btn-danger" href="{{ path('company_admin_show', {'id': company.id}) }}"
+                                   role="button">voir</a>
+                                <a class="btn btn-danger" href="{{ path('company_admin_edit', {'id': company.id}) }}"
+                                   role="button">modifier</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="7">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="text-center"><a class="btn btn-danger" href="{{ path('company_admin_new') }}" role="button">Créer</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie de Service{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Catégorie de Service</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ category_service.name }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a class="btn btn-danger" href="{{ path('category_service_admin_edit', {'id': category_service.id}) }}"
+                   role="button">Modifier</a>
+                {{ include('admin/category_service/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-danger" href="{{ path('category_service_admin_index') }}" role="button">Retour à la liste</a>
+{% endblock %}

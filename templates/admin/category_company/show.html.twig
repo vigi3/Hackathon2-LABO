@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Catégorie</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ category_company.name }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a class="btn btn-danger" href="{{ path('category_company_admin_edit', {'id': category_company.id}) }}"
+                   role="button">modifier</a>
+                {{ include('admin/category_company/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-danger" href="{{ path('category_company_admin_index') }}" role="button">Retour à la liste</a>
+{% endblock %}

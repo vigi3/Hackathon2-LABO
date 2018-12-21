@@ -4,14 +4,14 @@ body {
 }
 
 .container {
-   background-color: #eaeaea;
+    background-color: #eaeaea;
 }
 
 .banner {
     position: relative;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 40%;
     height: 40%;
 }
@@ -47,3 +47,34 @@ a:hover {
     height: 50%;
 }
 
+/*
+style logo
+ */
+.navbar-brand{
+    bcolor: #ee413a;
+}
+/* style title
+ */
+h1 {
+    color:#ee413a;
+    text-shadow: 2px 3px 2px black;
+    font-size: calc(3.7vw + 25pt);
+    margin-top: 6%;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align: center;
+}
+p, li, th, td {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 1.6em;
+}
+li{
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 1.6em;
+}
+a .buttonvalid{
+    color: white;
+}
+
+.adm {
+    font-size: 2.5vh;
+}

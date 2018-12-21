@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Entreprise{% endblock %}
-
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
 {% block body %}
     <h1>Entreprise</h1>
 
@@ -16,8 +18,8 @@
             <td>{{ company.managerName }}</td>
         </tr>
         <tr>
-            <th>CompanyType</th>
-            <td>{{ company.companyType }}</td>
+            <th>Categorie </th>
+            <td>{{ company.categoryCompany.name }}</td>
         </tr>
         <tr>
             <th>Mail</th>
