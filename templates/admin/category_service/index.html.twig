@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie des Services{% endblock %}
+
+{% block header %}{% include 'navbarAdmin.html.twig' %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Catégorie des Services</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for category_service in category_services %}
+                        <tr>
+                            <td>{{ category_service.name }}</td>
+                            <td>
+                                <a class="btn btn-danger"
+                                   href="{{ path('category_service_admin_show', {'id': category_service.id}) }}"
+                                   role="button">voir</a>
+                                <a class="btn btn-danger"
+                                   href="{{ path('category_service_admin_edit', {'id': category_service.id}) }}"
+                                   role="button">modifier</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="text-center"><a class="btn btn-danger" href="{{ path('category_service_admin_new') }}"
+                                role="button">Créer</a></div>
+{% endblock %}
