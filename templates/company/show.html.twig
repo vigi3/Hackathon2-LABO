@@ -1,9 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Entreprise{% endblock %}
-
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
 {% block body %}
-    <h1>Entreprise</h1>
+    <div class="container">
+
+    <a class="btn btn-primary" href="{{ path('company_index') }}" role="button">Retour à la liste</a>
+
+    <h1 class="mt-5">Entreprise</h1>
 
     <table class="table">
         <tbody>
@@ -16,8 +22,8 @@
             <td>{{ company.managerName }}</td>
         </tr>
         <tr>
-            <th>CompanyType</th>
-            <td>{{ company.companyType }}</td>
+            <th>Categorie </th>
+            <td>{{ company.categoryCompany.name }}</td>
         </tr>
         <tr>
             <th>Mail</th>
@@ -29,11 +35,5 @@
         </tr>
         </tbody>
     </table>
-
-    <a class="btn btn-primary" href="{{ path('company_edit', {'id': company.id}) }}" role="button">modifier</a>
-
-    {{ include('company/_delete_form.html.twig') }}
-
-    <a class="btn btn-primary" href="{{ path('company_index') }}" role="button">Retour à la liste</a>
-
+    </div>
 {% endblock %}
