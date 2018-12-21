@@ -20,6 +20,7 @@ class ServiceController extends AbstractController
      */
     public function index(ServiceRepository $serviceRepository): Response
     {
+        dump($serviceRepository);die();
         return $this->render('service/index.html.twig', ['services' => $serviceRepository->findAll()]);
     }
 

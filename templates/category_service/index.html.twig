@@ -1,38 +1,24 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Catégorie des Services{% endblock %}
-
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
 {% block body %}
-    <h1>Catégorie des Services</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom de catégorie</th>
-                <th>Service</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category_service in category_services %}
-            <tr>
-                <td>{{ category_service.name }}</td>
-                <td>{% for service in category_service.services %}
-                    {{ service.title }}
-                    {% endfor %}
-                </td>
-                <td>
-                    <a class="btn btn-primary" href="{{ path('category_service_show', {'id': category_service.id}) }}" role="button">voir</a>
-                    <a class="btn btn-primary" href="{{ path('category_service_edit', {'id': category_service.id}) }}" role="button">modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a class="btn btn-primary" href="{{ path('category_service_new') }}" role="button">Créer</a>
+    <div class="container mt-5">
+        <div class="row">
+            {% for category_service in category_services %}
+                <div class="icone col-5 mt-5 mb-5">
+                    <img src="{{ category_service.image }}" alt=""/>
+                </div>
+                <div class="col-3 mt-auto mb-auto">
+                    <ul class=" d-block">
+                        {% for service in category_service.services %}
+                            <li>
+                            {{ service.title }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
