@@ -6,11 +6,12 @@
     <div class="container">
         <h1>Modifier la catégorie</h1>
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                 {{ include('admin/category_company/_form.html.twig', {'button_label': 'Changer'}) }}
                 {{ include('admin/category_company/_delete_form.html.twig') }}
-                <a class="btn btn-danger" href="{{ path('category_company_admin_index') }}" role="button">Retour à la liste</a>
             </div>
         </div>
     </div>
+    <a class="btn btn-danger" href="{{ path('category_company_admin_index') }}" role="button">Retour à la
+        liste</a>
 {% endblock %}
